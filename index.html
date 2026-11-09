@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Nguyễn Tiến Dũng - Tư vấn pháp luật</title>
+</head>
+<style>
+    body {
+        background-color: #f2f5f9;
+        font-family: Arial, sans-serif;
+        color: #333333;
+    }
+
+    h1 {
+        color: #17365d;
+    }
+
+    h2 {
+        color: #24476b;
+    }
+
+    p, li {
+        font-size: 18px;
+    }
+    body {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    html {
+    background-color: #e8eef5;
+    }
+    h1 {
+    text-align: center;
+    }
+    img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    }
+    .tieu-de-chinh {
+    text-align: center;
+}
+.nut-lien-he {
+    display: inline-block;
+    background-color: #1763a6;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.nut-lien-he:hover {
+    background-color: #0b3d70;
+}
+.nut-goi, .nut-zalo {
+    display: inline-block;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nut-goi {
+    background-color: #16803c;
+}
+
+.nut-zalo {
+    background-color: #0875e1;
+}
+
+.nut-goi:hover {
+    background-color: #105c2c;
+}
+
+.nut-zalo:hover {
+    background-color: #0559ad;
+}
+.menu {
+    background-color: #17365d;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.menu a:hover {
+    color: #ffd700;
+}
+.danh-sach-dich-vu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.dich-vu {
+    background-color: #f2f6fb;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #d5e0ed;
+}
+
+.dich-vu h3 {
+    color: #17365d;
+    margin-top: 0;
+}
+
+.dich-vu p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+@media (max-width: 600px) {
+
+    body {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .danh-sach-dich-vu {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .menu a {
+        display: inline-block;
+        margin: 5px;
+        font-size: 14px;
+    }
+}
+.danh-sach-bai-viet {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.bai-viet {
+    background-color: #f2f6fb;
+    padding: 20px;
+    border: 1px solid #d5e0ed;
+    border-radius: 10px;
+}
+
+.bai-viet h3 {
+    color: #17365d;
+    margin-top: 0;
+}
+
+.bai-viet p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.bai-viet a {
+    color: #1763a6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.bai-viet a:hover {
+    text-decoration: underline;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#lien-he {
+    scroll-margin-top: 20px;
+}
+.chan-trang {
+    background-color: #17365d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.chan-trang h3 {
+    color: white;
+    margin-top: 0;
+}
+
+.chan-trang p {
+    font-size: 15px;
+}
+
+.chan-trang a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.chan-trang a:hover {
+    text-decoration: underline;
+}
+
+.bieu-mau-lien-he {
+    background-color: #f2f6fb;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.bieu-mau-lien-he form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bieu-mau-lien-he label {
+    font-weight: bold;
+}
+
+.bieu-mau-lien-he input,
+.bieu-mau-lien-he select,
+.bieu-mau-lien-he textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.bieu-mau-lien-he button {
+    background-color: #1763a6;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#thong-bao-form {
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#thong-bao-form:empty {
+    display: none;
+}
+
+.thong-bao-loi {
+    background-color: #ffe5e5;
+    color: #b00020;
+    border: 1px solid #e6a0a0;
+}
+
+.thong-bao-thanh-cong {
+    background-color: #e5f6e8;
+    color: #176b2c;
+    border: 1px solid #9dd6a6;
+}
+
+.khung-tim-kiem {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.khung-tim-kiem input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+}
+
+.khung-tim-kiem button {
+    background-color: #1763a6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#ket-qua-tim-kiem {
+    color: #17365d;
+    font-weight: bold;
+}
+
+.bo-loc-linh-vuc {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.bo-loc-linh-vuc button {
+    background-color: #e8eef5;
+    color: #17365d;
+    border: 1px solid #b8c9db;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.bo-loc-linh-vuc button:hover {
+    background-color: #d2e3f5;
+}
+
+.bo-loc-linh-vuc button.dang-chon {
+    background-color: #1763a6;
+    color: white;
+}
+
+/* BÀI 26 - RESPONSIVE DESIGN */
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Các khung lĩnh vực chuyển thành một cột */
+    .danh-sach-dich-vu {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Ô tìm kiếm và nút XÓA */
+    .khung-tim-kiem {
+        flex-direction: column;
+    }
+
+    .khung-tim-kiem input {
+        width: 100%;
+    }
+
+    .khung-tim-kiem button {
+        width: 100%;
+    }
+
+    /* Các nút lọc tự xuống dòng */
+    .bo-loc-linh-vuc {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .bo-loc-linh-vuc button {
+        font-size: 13px;
+        padding: 9px 12px;
+    }
+
+    /* Biểu mẫu tư vấn */
+    .bieu-mau-lien-he input,
+    .bieu-mau-lien-he select,
+    .bieu-mau-lien-he textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Tiêu đề nhỏ hơn trên điện thoại */
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+}
+
+.nut-menu {
+    display: none;
+    background-color: #17365d;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .nut-menu {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu.menu-mo {
+        display: flex;
+    }
+
+    .menu a {
+        display: block;
+        padding: 12px;
+        text-align: center;
+    }
+}
+#nut-len-dau-trang {
+    display: none;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+/* Hiện nút khi cuộn xuống */
+#nut-len-dau-trang.hien-nut {
+    display: block;
+}
+
+/* Hiệu ứng khi đưa chuột vào nút */
+#nut-len-dau-trang:hover {
+    background-color: #0066cc;
+}
+html {
+    max-width: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+input, select, textarea {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .danh-sach-dich-vu {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #nut-len-dau-trang {
+        width: 45px;
+        height: 45px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+</style>
+<body>
+    
+<button
+    type="button"
+    class="nut-menu"
+    id="nut-menu"
+    aria-label="Mở menu điều hướng"
+    aria-controls="menu-chinh"
+    aria-expanded="false"
+    onclick="batTatMenu()">
+    ☰ MENU
+</button>
+
+    <nav class="menu" id="menu-chinh">
+    <a href="#trang-chu">TRANG CHỦ</a>
+    <a href="gioi-thieu.html">GIỚI THIỆU</a>
+    <a href="#linh-vuc">LĨNH VỰC</a>
+    <a href="#lien-he">LIÊN HỆ</a>
+</nav>
+    <h1 id="trang-chu">NGUYỄN TIẾN DŨNG</h1>
+    <img src="dung.jpg" alt="Nguyễn Tiến Dũng - Tư vấn pháp luật" width="250">
+
+    <h2 class="tieu-de-chinh">TƯ VẤN PHÁP LUẬT</h2>
+    
+    <p>Chia sẻ, cập nhật kiến thức pháp luật dễ hiểu,
+    thiết thực và gần gũi với mọi người.</p>
+
+    <h2 id="linh-vuc">LĨNH VỰC TƯ VẤN</h2>
+    <div class="danh-sach-dich-vu">
+
+    <div class="dich-vu">
+        <h3>Hôn nhân và gia đình</h3>
+        <p>Tư vấn ly hôn, quyền nuôi con và chia tài sản.</p>
+    </div>
+
+    <div class="dich-vu">
+        <h3>Đất đai</h3>
+        <p>Tư vấn tranh chấp, chuyển nhượng và giấy chứng nhận.</p>
+    </div>
+
+    <div class="dich-vu">
+        <h3>Dân sự và hợp đồng</h3>
+        <p>Tư vấn hợp đồng và giải quyết tranh chấp dân sự.</p>
+    </div>
+
+    <div class="dich-vu">
+        <h3>Thừa kế tài sản</h3>
+        <p>Tư vấn di chúc và phân chia di sản thừa kế.</p>
+    </div>
+    </div>
+
+<h2 id="bai-viet-phap-luat">BÀI VIẾT PHÁP LUẬT</h2>
+
+<div class="khung-tim-kiem">
+    <input
+        type="search"
+        id="o-tim-kiem"
+        placeholder="Nhập từ khóa tìm kiếm..."
+        oninput="timKiemBaiViet()">
+
+    <button type="button" onclick="xoaTimKiem()">
+        XÓA
+    </button>
+</div>
+
+<div class="bo-loc-linh-vuc">
+    <button type="button" onclick="locTheoLinhVuc('tat-ca')">
+        TẤT CẢ
+    </button>
+
+    <button type="button" onclick="locTheoLinhVuc('hon-nhan')">
+        HÔN NHÂN
+    </button>
+
+    <button type="button" onclick="locTheoLinhVuc('dat-dai')">
+        ĐẤT ĐAI
+    </button>
+
+    <button type="button" onclick="locTheoLinhVuc('dan-su')">
+        DÂN SỰ
+    </button>
+
+    <button type="button" onclick="locTheoLinhVuc('thua-ke')">
+        THỪA KẾ
+    </button>
+</div>
+
+
+<p id="ket-qua-tim-kiem" aria-live="polite"></p>
+
+
+<div class="danh-sach-bai-viet">
+
+    <div class="bai-viet" data-linh-vuc="hon-nhan">
+        <h3>Ly hôn đơn phương là gì?</h3>
+        <p>Tìm hiểu quyền yêu cầu ly hôn và những điều cần lưu ý.</p>
+        <a href="bai-viet-1.html">Đọc bài viết</a>
+    </div>
+
+    <div class="bai-viet" data-linh-vuc="dat-dai">
+        <h3>Mua đất bằng giấy viết tay</h3>
+        <p>Những vấn đề cần kiểm tra khi nhận chuyển nhượng đất.</p>
+        <a href="bai-viet-2.html">Đọc bài viết</a>
+    </div>
+
+    <div class="bai-viet" data-linh-vuc="thua-ke">
+        <h3>Tranh chấp thừa kế tài sản</h3>
+        <p>Tìm hiểu về di chúc và phân chia di sản thừa kế.</p>
+        <a href="bai-viet-3.html">Đọc bài viết</a>
+    </div>
+
+</div>
+
+    <p>
+        <a href="#lien-he" class="nut-lien-he">
+    LIÊN HỆ TƯ VẤN PHÁP LUẬT
+</a>
+    </p>
+    <h2 id="lien-he">THÔNG TIN LIÊN HỆ</h2>
+<p>
+    <a href="tel:0902959744" class="nut-goi">
+        GỌI ĐIỆN TƯ VẤN
+    </a>
+</p>
+
+<p>
+    <a href="https://zalo.me/0902959744"
+       class="nut-zalo"
+       target="_blank"
+       rel="noopener noreferrer">
+        LIÊN HỆ ZALO
+    </a>
+</p>
+    <p>Người tư vấn: Nguyễn Tiến Dũng</p>
+    <p>Lĩnh vực: Tư vấn pháp luật</p>
+    
+<section class="bieu-mau-lien-he">
+    <h2>GỬI YÊU CẦU TƯ VẤN</h2>
+    <form id="form-tu-van"
+      onsubmit="return kiemTraBieuMau(event)">
+
+        <label for="ho-ten">Họ và tên:</label>
+        <input type="text" id="ho-ten"
+               name="ho-ten"
+               placeholder="Nhập họ và tên"
+               required>
+
+        <label for="so-dien-thoai">Số điện thoại:</label>
+        <input type="tel" id="so-dien-thoai"
+               name="so-dien-thoai"
+               placeholder="Nhập số điện thoại"
+               required>
+
+        <label for="linh-vuc-tu-van">
+            Lĩnh vực cần tư vấn:
+        </label>
+
+        <select id="linh-vuc-tu-van"
+                name="linh-vuc-tu-van" required>
+            <option value="">-- Chọn lĩnh vực --</option>
+            <option value="hon-nhan">
+                Hôn nhân và gia đình
+            </option>
+            <option value="dat-dai">Đất đai</option>
+            <option value="dan-su">
+                Dân sự và hợp đồng
+            </option>
+            <option value="thua-ke">Thừa kế</option>
+        </select>
+
+        <label for="noi-dung">
+            Nội dung cần tư vấn:
+        </label>
+
+        <textarea id="noi-dung" name="noi-dung"
+                  rows="5"
+                  placeholder="Nhập nội dung cần tư vấn"
+                  required></textarea>
+
+        <button type="submit">GỬI YÊU CẦU</button>
+        <button type="button"
+        onclick="lamMoiBieuMau()">
+    LÀM MỚI BIỂU MẪU
+</button>
+        
+<p id="thong-bao-form" role="status" aria-live="polite"></p>
+
+    </form>
+</section>
+<CodeBlock language="css" editable>
+    
+<section class="thuc-hanh-js">
+    <h2>THỰC HÀNH JAVASCRIPT</h2>
+
+    <p>Nhấn nút bên dưới để xem thông báo.</p>
+
+    <button type="button"
+            onclick="hienThongBao()">
+        NHẤN VÀO ĐÂY
+    </button>
+    
+<p id="thong-bao-js">
+    Chưa có thông báo mới.
+</p>
+
+<button type="button"
+        onclick="thayDoiNoiDung()">
+    XEM THÔNG TIN
+</button>
+
+</section>
+
+
+<footer class="chan-trang">
+    <h3>NGUYỄN TIẾN DŨNG – TƯ VẤN PHÁP LUẬT</h3>
+
+    <p>
+        Chia sẻ kiến thức pháp luật dễ hiểu
+        và thiết thực.
+    </p>
+
+    <p>
+        © 2026 Nguyễn Tiến Dũng.
+        Bảo lưu các quyền.
+    </p>
+
+    <a href="#trang-chu">VỀ ĐẦU TRANG ↑</a>
+</footer>
+
+<script>
+    function hienThongBao() {
+        alert("Chào mừng bạn đến với website tư vấn pháp luật!");
+    }
+    
+function thayDoiNoiDung() {
+    document.getElementById("thong-bao-js").textContent =
+        "Website chia sẻ kiến thức pháp luật về hôn nhân, đất đai, dân sự và thừa kế.";
+}
+
+
+function kiemTraBieuMau(event) {
+    event.preventDefault();
+
+    let soDienThoai = document.getElementById("so-dien-thoai").value.trim();
+    let thongBao = document.getElementById("thong-bao-form");
+
+    // Kiểm tra số điện thoại Việt Nam gồm 10 chữ số
+    let mauSoDienThoai = /^0[0-9]{9}$/;
+
+    if (!mauSoDienThoai.test(soDienThoai)) {
+        thongBao.textContent = "Số điện thoại không hợp lệ. Vui lòng nhập đúng 10 chữ số.";
+
+        thongBao.style.backgroundColor = "#f8d7da";
+        thongBao.style.color = "#842029";
+        thongBao.style.padding = "15px";
+        thongBao.style.borderRadius = "8px";
+        setTimeout(function() {
+    thongBao.textContent = "";
+    thongBao.style.padding = "0";
+}, 5000);
+
+        return false;
+        }
+
+    // Thông báo khi nhập hợp lệ
+    thongBao.textContent = "Thông tin hợp lệ! Đây là biểu mẫu thực hành, yêu cầu chưa được gửi đi.";
+
+    thongBao.style.backgroundColor = "#d1e7dd";
+    thongBao.style.color = "#0f5132";
+    thongBao.style.padding = "15px";
+    thongBao.style.borderRadius = "8px";
+    setTimeout(function() {
+    thongBao.textContent = "";
+    thongBao.style.padding = "0";
+}, 5000);
+
+    return false;
+}
+
+function lamMoiBieuMau() {
+    // Xóa toàn bộ dữ liệu đã nhập
+    document.getElementById("form-tu-van").reset();
+
+    // Xóa thông báo cũ
+    let thongBao = document.getElementById("thong-bao-form");
+
+    thongBao.textContent = "";
+    thongBao.style.padding = "0";
+}
+
+function boDauTiengViet(chuoi) {
+    return chuoi
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d");
+}
+
+
+let linhVucDangChon = "tat-ca";
+
+function locTheoLinhVuc(linhVuc) {
+    linhVucDangChon = linhVuc;
+
+    let cacNut = document.querySelectorAll(
+        ".bo-loc-linh-vuc button"
+    );
+
+    cacNut.forEach(function(nut) {
+        nut.classList.remove("dang-chon");
+    });
+
+    let nutDuocChon = Array.from(cacNut).find(function(nut) {
+        return nut.getAttribute("onclick") ===
+            "locTheoLinhVuc('" + linhVuc + "')";
+    });
+
+    if (nutDuocChon) {
+        nutDuocChon.classList.add("dang-chon");
+    }
+
+    timKiemBaiViet();
+}
+
+function timKiemBaiViet() {sessionStorage.setItem(
+    "tu-khoa-tim-kiem",
+    document.getElementById("o-tim-kiem").value
+);
+
+sessionStorage.setItem(
+    "linh-vuc-da-chon",
+    linhVucDangChon
+);
+    let tuKhoa = document.getElementById("o-tim-kiem").value.trim();
+
+    tuKhoa = boDauTiengViet(tuKhoa);
+
+    let danhSach = document.querySelectorAll(
+        ".danh-sach-bai-viet .bai-viet"
+    );
+
+    let soBaiTimThay = 0;
+
+    danhSach.forEach(function(baiViet) {
+        let noiDung = boDauTiengViet(baiViet.textContent);
+
+        let linhVuc = baiViet.getAttribute("data-linh-vuc");
+
+        let dungTuKhoa = noiDung.includes(tuKhoa);
+
+        let dungLinhVuc =
+            linhVucDangChon === "tat-ca" ||
+            linhVuc === linhVucDangChon;
+
+        if (dungTuKhoa && dungLinhVuc) {
+            baiViet.style.display = "";
+            soBaiTimThay++;
+        } else {
+            baiViet.style.display = "none";
+        }
+    });
+
+    let ketQua = document.getElementById("ket-qua-tim-kiem");
+
+    if (tuKhoa === "" && linhVucDangChon === "tat-ca") {
+        ketQua.textContent = "";
+    } else if (soBaiTimThay === 0) {
+        ketQua.textContent = "Không tìm thấy bài viết phù hợp.";
+    } else {
+        ketQua.textContent = "Tìm thấy " + soBaiTimThay + " bài viết.";
+    }
+}
+
+
+
+function xoaTimKiem() {
+    document.getElementById("o-tim-kiem").value = "";
+    timKiemBaiViet();
+}
+
+
+function khoiPhucTimKiem() {
+    let tuKhoaDaLuu = sessionStorage.getItem(
+        "tu-khoa-tim-kiem"
+    );
+
+    let linhVucDaLuu = sessionStorage.getItem(
+        "linh-vuc-da-chon"
+    );
+
+    if (tuKhoaDaLuu !== null) {
+        document.getElementById("o-tim-kiem").value =
+            tuKhoaDaLuu;
+    }
+
+    if (linhVucDaLuu !== null) {
+        locTheoLinhVuc(linhVucDaLuu);
+    } else {
+        timKiemBaiViet();
+    }
+}
+
+window.addEventListener("DOMContentLoaded", khoiPhucTimKiem);
+
+
+function batTatMenu() {
+    let menu = document.getElementById("menu-chinh");
+    let nut = document.getElementById("nut-menu");
+
+    let dangMo = menu.classList.toggle("menu-mo");
+
+    nut.setAttribute("aria-expanded", dangMo);
+
+    if (dangMo) {
+        nut.textContent = "✕ ĐÓNG MENU";
+        nut.setAttribute("aria-label", "Đóng menu điều hướng");
+    } else {
+        nut.textContent = "☰ MENU";
+        nut.setAttribute("aria-label", "Mở menu điều hướng");
+    }
+}
+
+function kiemTraViTriCuon() {
+    let nut = document.getElementById("nut-len-dau-trang");
+
+    if (window.scrollY > 300) {
+        nut.classList.add("hien-nut");
+    } else {
+        nut.classList.remove("hien-nut");
+    }
+}
+
+function lenDauTrang() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+window.addEventListener("scroll", kiemTraViTriCuon);
+
+window.addEventListener(
+    "DOMContentLoaded",
+    kiemTraViTriCuon
+);
+
+</script>
+<button
+    type="button"
+    id="nut-len-dau-trang"
+    onclick="lenDauTrang()"
+    aria-label="Quay lại đầu trang"
+    title="Quay lại đầu trang">
+    ↑
+</button>
+</body>
+</html>
