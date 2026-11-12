@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /tu-van-phap-luat/
+
+Sitemap: https://tiendung-law.github.io/tu-van-phap-luat/sitemap.xml
