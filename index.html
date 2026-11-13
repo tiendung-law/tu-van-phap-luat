@@ -3,7 +3,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="google-site-verification" content="Y47ptd7z3StTTJCQk8SDcnUokrJuIO8ioihh031VBwE" />
+    <meta name="google-site-verification" content="Y47ptd7z3StTTJCQk8SDcnUokrJuIO8ioihh031VBwE"/>
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
@@ -680,8 +680,13 @@ input, select, textarea {
     
 <section class="bieu-mau-lien-he">
     <h2>GỬI YÊU CẦU TƯ VẤN</h2>
-    <form id="form-tu-van"
-      onsubmit="return kiemTraBieuMau(event)">
+    
+<form
+    id="form-tu-van"
+    action="https://formspree.io/f/xppdwkbl"
+    method="POST"
+    onsubmit="return kiemTraBieuMau(event)">
+
 
         <label for="ho-ten">Họ và tên:</label>
         <input type="text" id="ho-ten"
@@ -731,7 +736,6 @@ input, select, textarea {
 
     </form>
 </section>
-<CodeBlock language="css" editable>
     
 <section class="thuc-hanh-js">
     <h2>THỰC HÀNH JAVASCRIPT</h2>
@@ -781,42 +785,81 @@ function thayDoiNoiDung() {
         "Website chia sẻ kiến thức pháp luật về hôn nhân, đất đai, dân sự và thừa kế.";
 }
 
-
-function kiemTraBieuMau(event) {
+    
+async function kiemTraBieuMau(event) {
     event.preventDefault();
 
-    let soDienThoai = document.getElementById("so-dien-thoai").value.trim();
-    let thongBao = document.getElementById("thong-bao-form");
+    const form = document.getElementById("form-tu-van");
+    const soDienThoai = document
+        .getElementById("so-dien-thoai")
+        .value.trim();
 
-    // Kiểm tra số điện thoại Việt Nam gồm 10 chữ số
-    let mauSoDienThoai = /^0[0-9]{9}$/;
+    const thongBao = document.getElementById("thong-bao-form");
+    const mauSoDienThoai = /^0[0-9]{9}$/;
 
-    if (!mauSoDienThoai.test(soDienThoai)) {
-        thongBao.textContent = "Số điện thoại không hợp lệ. Vui lòng nhập đúng 10 chữ số.";
-
-        thongBao.style.backgroundColor = "#f8d7da";
-        thongBao.style.color = "#842029";
+    function hienThiThongBao(noiDung, thanhCong) {
+        thongBao.textContent = noiDung;
+        thongBao.style.backgroundColor = thanhCong
+            ? "#d1e7dd"
+            : "#f8d7da";
+        thongBao.style.color = thanhCong
+            ? "#0f5132"
+            : "#842029";
         thongBao.style.padding = "15px";
         thongBao.style.borderRadius = "8px";
-        setTimeout(function() {
-    thongBao.textContent = "";
-    thongBao.style.padding = "0";
-}, 5000);
+    }
 
+    // Kiểm tra số điện thoại
+    if (!mauSoDienThoai.test(soDienThoai)) {
+        hienThiThongBao(
+            "Số điện thoại không hợp lệ. Vui lòng nhập đúng 10 chữ số.",
+            false
+        );
         return false;
+    }
+
+    // Kiểm tra các trường bắt buộc
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return false;
+    }
+
+    const nutGui = form.querySelector('[type="submit"]');
+
+    if (nutGui) nutGui.disabled = true;
+
+    hienThiThongBao("Đang gửi yêu cầu, vui lòng chờ...", true);
+
+    try {
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: {
+                "Accept": "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("Formspree không chấp nhận yêu cầu.");
         }
 
-    // Thông báo khi nhập hợp lệ
-    thongBao.textContent = "Thông tin hợp lệ! Đây là biểu mẫu thực hành, yêu cầu chưa được gửi đi.";
+        hienThiThongBao(
+            "Gửi yêu cầu thành công! Chúng tôi đã nhận được thông tin.",
+            true
+        );
 
-    thongBao.style.backgroundColor = "#d1e7dd";
-    thongBao.style.color = "#0f5132";
-    thongBao.style.padding = "15px";
-    thongBao.style.borderRadius = "8px";
-    setTimeout(function() {
-    thongBao.textContent = "";
-    thongBao.style.padding = "0";
-}, 5000);
+        form.reset();
+
+    } catch (error) {
+        console.error("Lỗi gửi biểu mẫu:", error);
+
+        hienThiThongBao(
+            "Không gửi được yêu cầu. Vui lòng thử lại sau.",
+            false
+        );
+    } finally {
+        if (nutGui) nutGui.disabled = false;
+    }
 
     return false;
 }
