@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -527,6 +526,24 @@ input, select, textarea {
         bottom: 15px;
     }
 }
+
+.chuyen-muc {
+    margin-top: 30px;
+    padding: 24px;
+    background-color: #f2f5f9;
+    border-radius: 10px;
+    border: 1px solid #dce3eb;
+}
+
+.chuyen-muc h2 {
+    color: #17365d;
+    margin-top: 0;
+}
+
+.chuyen-muc p {
+    line-height: 1.7;
+}
+
 </style>
 <link rel="icon" type="image/png" href="favicon.png">
 </head>
@@ -545,8 +562,21 @@ input, select, textarea {
 
     <nav class="menu" id="menu-chinh">
     <a href="#trang-chu">TRANG CHỦ</a>
+
+    <a href="#kien-thuc-phap-luat">
+        KIẾN THỨC PHÁP LUẬT
+    </a>
+
+    <a href="#chinh-sach-moi">
+        CHÍNH SÁCH MỚI
+    </a>
+
+    <a href="#hoi-dap">
+        HỎI - ĐÁP PHÁP LUẬT
+    </a>
+
     <a href="gioi-thieu.html">GIỚI THIỆU</a>
-    <a href="#linh-vuc">LĨNH VỰC</a>
+
     <a href="#lien-he">LIÊN HỆ</a>
 </nav>
     <h1 id="trang-chu">NGUYỄN TIẾN DŨNG</h1>
@@ -624,15 +654,15 @@ input, select, textarea {
 <p id="ket-qua-tim-kiem" aria-live="polite"></p>
 
 
-<div class="danh-sach-bai-viet">
+<div class="danh-sach-bai-viet"
+     id="kien-thuc-phap-luat">
 
     <div class="bai-viet" data-linh-vuc="hon-nhan">
         <h3>Ly hôn đơn phương là gì?</h3>
         <p>Tìm hiểu quyền yêu cầu ly hôn và những điều cần lưu ý.</p>
         <a href="bai-viet-1.html">Đọc bài viết</a>
     </div>
-
-    <div class="bai-viet" data-linh-vuc="dat-dai">
+     <div class="bai-viet" data-linh-vuc="dat-dai">
         <h3>Mua đất bằng giấy viết tay</h3>
         <p>Những vấn đề cần kiểm tra khi nhận chuyển nhượng đất.</p>
         <a href="bai-viet-2.html">Đọc bài viết</a>
@@ -651,11 +681,52 @@ input, select, textarea {
         thuận tình ly hôn tại Việt Nam.
     </p>
     <a href="bai-viet-4.html">Đọc bài viết</a>
+  
+    </div>
+
+    <h2>CHÍNH SÁCH MỚI</h2>
+
+    <p>
+        Cập nhật những quy định pháp luật mới,
+        thời điểm có hiệu lực và các nội dung
+        người dân cần lưu ý.
+    </p>
+
+    <p>
+        Các bài viết sẽ được cập nhật trong
+        thời gian tới.
+    </p>
+</section>
+
+    <h2>HỎI - ĐÁP PHÁP LUẬT</h2>
+
+    <p>
+        Tổng hợp những câu hỏi pháp luật
+        thường gặp trong đời sống.
+    </p>
+
+    <p>
+        Nội dung trả lời mang tính cung cấp
+        thông tin pháp luật chung, không thay
+        thế ý kiến tư vấn chuyên môn cho
+        từng vụ việc cụ thể.
+    </p>
+</section>
+
+
+   
 </div>
 
+<section id="chinh-sach-moi" class="chuyen-muc">
+    <h2>CHÍNH SÁCH MỚI</h2>
+    <p>Cập nhật các quy định pháp luật mới và thời điểm có hiệu lực.</p>
+</section>
 
-</div>
-
+<section id="hoi-dap" class="chuyen-muc">
+    <h2>HỎI - ĐÁP PHÁP LUẬT</h2>
+    <p>Giải đáp những câu hỏi pháp luật thường gặp trong đời sống.</p>
+    <p>Nội dung chỉ cung cấp thông tin pháp luật chung.</p>
+</section>
     <p>
         <a href="#lien-he" class="nut-lien-he">
     LIÊN HỆ TƯ VẤN PHÁP LUẬT
