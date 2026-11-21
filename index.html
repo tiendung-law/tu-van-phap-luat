@@ -543,6 +543,102 @@ input, select, textarea {
 .chuyen-muc p {
     line-height: 1.7;
 }
+/* MENU NGANG KHÔNG XUỐNG DÒNG */
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 8px;
+}
+
+.menu a {
+    white-space: nowrap;
+    font-size: 15px;
+    padding: 12px 8px;
+    text-align: center;
+}
+
+/* MENU TRÊN MÀN HÌNH NHỎ */
+@media (max-width: 900px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .menu.hien-menu {
+        display: flex;
+    }
+
+    .menu a {
+        display: block;
+        text-align: left;
+        padding: 12px 15px;
+    }
+
+    #nut-menu {
+        display: block;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 901px) {
+    #nut-menu {
+        display: none;
+    }
+}
+
+/* MENU KHONG XUONG DONG TREN MAY TINH */
+@media (min-width: 901px) {
+    .menu {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+    }
+
+    .menu a {
+        white-space: nowrap;
+        flex-shrink: 0;
+        font-size: 14px;
+        padding: 12px 6px;
+        text-align: center;
+    }
+
+    #nut-menu {
+        display: none;
+    }
+}
+
+/* MENU THU GON KHI MAN HINH HEP */
+@media (max-width: 900px) {
+    #nut-menu {
+        display: block;
+        margin-left: auto;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .menu.menu-mo {
+        display: flex;
+    }
+
+    .menu a {
+        display: block;
+        white-space: nowrap;
+        text-align: left;
+        padding: 12px 15px;
+    }
+}
+
 
 </style>
 <link rel="icon" type="image/png" href="favicon.png">
@@ -571,7 +667,7 @@ input, select, textarea {
         CHÍNH SÁCH MỚI
     </a>
 
-    <a href="hoi-dap.html">HỎI - ĐÁP PHÁP LUẬT</a>
+    <a href="hoi-dap.html">HỎI - ĐÁP</a>
 
     <a href="gioi-thieu.html">GIỚI THIỆU</a>
 
@@ -715,7 +811,7 @@ input, select, textarea {
     </p>
 </section>
 
-    <h2>HỎI - ĐÁP PHÁP LUẬT</h2>
+    <h2>HỎI - ĐÁP</h2>
 
     <p>
         Tổng hợp những câu hỏi pháp luật
@@ -760,7 +856,7 @@ input, select, textarea {
 </section>
 
 <section id="hoi-dap" class="chuyen-muc">
-    <h2>HỎI - ĐÁP PHÁP LUẬT</h2>
+    <h2>HỎI - ĐÁP</h2>
     <p>Giải đáp những câu hỏi pháp luật thường gặp trong đời sống.</p>
     <p>Nội dung chỉ cung cấp thông tin pháp luật chung.</p>
 </section>
@@ -1055,25 +1151,30 @@ sessionStorage.setItem(
             baiViet.style.display = "none";
         }
     });
+    let thongBao = document.getElementById("so-bai-tim-thay");
+
+if (thongBao) {
+    thongBao.textContent = "Tìm thấy " + soBaiTimThay + " bài viết";
+}
 
     let ketQua = document.getElementById("ket-qua-tim-kiem");
 
-    if (tuKhoa === "" && linhVucDangChon === "tat-ca") {
-        ketQua.textContent = "";
-    } else if (soBaiTimThay === 0) {
+   
+if (ketQua) {
+    if (soBaiTimThay === 0) {
         ketQua.textContent = "Không tìm thấy bài viết phù hợp.";
     } else {
         ketQua.textContent = "Tìm thấy " + soBaiTimThay + " bài viết.";
     }
 }
 
-
+}
 
 function xoaTimKiem() {
     document.getElementById("o-tim-kiem").value = "";
-    timKiemBaiViet();
-}
 
+    locTheoLinhVuc("tat-ca");
+}
 
 function khoiPhucTimKiem() {
     let tuKhoaDaLuu = sessionStorage.getItem(
@@ -1098,7 +1199,6 @@ function khoiPhucTimKiem() {
 
 window.addEventListener("DOMContentLoaded", khoiPhucTimKiem);
 
-
 function batTatMenu() {
     let menu = document.getElementById("menu-chinh");
     let nut = document.getElementById("nut-menu");
@@ -1108,13 +1208,14 @@ function batTatMenu() {
     nut.setAttribute("aria-expanded", dangMo);
 
     if (dangMo) {
-        nut.textContent = "✕ ĐÓNG MENU";
+        nut.textContent = "ĐÓNG MENU";
         nut.setAttribute("aria-label", "Đóng menu điều hướng");
     } else {
-        nut.textContent = "☰ MENU";
+        nut.textContent = "MENU";
         nut.setAttribute("aria-label", "Mở menu điều hướng");
     }
 }
+
 
 function kiemTraViTriCuon() {
     let nut = document.getElementById("nut-len-dau-trang");
